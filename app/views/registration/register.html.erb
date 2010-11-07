@@ -1,0 +1,28 @@
+<div class="page_container">
+<div class="page">
+<h1><%= @page.name %></h1>
+
+<% @problems.each do |p| %>
+  <div class="error"><%= p %></div>
+<% end %>
+
+<% form_for :record, :url => { :action => :register} do |f| %>
+  <%= hidden_field_tag 'page_history', @page_history.join("/") %>
+  <% for d in @registration_config.data_items - @page.input_element.data %>
+    <%= hidden_field :record, d.name %> 
+  <% end %>
+  <%= render :partial => 'content_element', :collection => @page.elements, :locals => { :f => f} %>
+
+  <div class="button_container">
+    <% if @page.predecessors.size > 0 && @page.successors.size > 0 %>
+      <%= submit_tag "Back" %>
+    <% end %>
+    <% if @page.successors.size > 0 %>
+      <%= submit_tag "Next" %>
+    <% end %>
+  </div>
+<% end %>
+</div>
+</div>
+
+<%= link_to 'Edit', edit_registration_config_path(@registration_config) %>

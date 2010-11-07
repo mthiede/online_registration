@@ -1,0 +1,49 @@
+[ { "_class": "Class", "abstract": false, "features": [ 
+  { "_class": "Feature", "name": "name", "kind": "attribute", "lowerLimit": 1, "upperLimit": 1, "type": "String" },
+  { "_class": "Feature", "name": "type", "kind": "attribute", "lowerLimit": 1, "upperLimit": 1, "type": "DataType" },
+  { "_class": "Feature", "name": "optional", "kind": "attribute", "lowerLimit": 0, "upperLimit": 1, "type": "Boolean" },
+  { "_class": "Feature", "name": "constraints", "kind": "containment", "lowerLimit": 0, "upperLimit": -1, "type": "Constraint" }], "name": "Data" },
+{ "_class": "Class", "abstract": false, "features": [ 
+  { "_class": "Feature", "name": "message", "kind": "attribute", "lowerLimit": 0, "upperLimit": 1, "type": "String" },
+  { "_class": "Feature", "name": "assert", "kind": "containment", "lowerLimit": 1, "upperLimit": 1, "type": "Expression" }], "name": "Constraint" },
+{ "_class": "Class", "abstract": true, "name": "Expression" },
+{ "_class": "Class", "abstract": false, "features": [ 
+  { "_class": "Feature", "name": "name", "kind": "attribute", "lowerLimit": 1, "upperLimit": 1, "type": "String" },
+  { "_class": "Feature", "name": "elements", "kind": "containment", "lowerLimit": 0, "upperLimit": -1, "type": "ContentElement" },
+  { "_class": "Feature", "name": "successors", "kind": "reference", "lowerLimit": 0, "upperLimit": -1, "type": "Page" },
+  { "_class": "Feature", "name": "guardCondition", "kind": "containment", "lowerLimit": 0, "upperLimit": 1, "type": "Expression" },
+  { "_class": "Feature", "name": "constraints", "kind": "containment", "lowerLimit": 0, "upperLimit": -1, "type": "Constraint" }], "name": "Page" },
+{ "_class": "Class", "abstract": true, "name": "ContentElement" },
+{ "_class": "Class", "abstract": true, "superTypes": [ "Expression" ], "features": [ 
+  { "_class": "Feature", "name": "data", "kind": "reference", "lowerLimit": 0, "upperLimit": 1, "type": "Data" }], "name": "SimpleExpression" },
+{ "_class": "Class", "abstract": false, "superTypes": [ "SimpleExpression" ], "features": [ 
+  { "_class": "Feature", "name": "values", "kind": "attribute", "lowerLimit": 1, "upperLimit": -1, "type": "String" }], "name": "OneOf" },
+{ "_class": "Class", "abstract": false, "superTypes": [ "SimpleExpression" ], "features": [ 
+  { "_class": "Feature", "name": "value", "kind": "attribute", "lowerLimit": 1, "upperLimit": 1, "type": "String" }], "name": "Equals" },
+{ "_class": "Class", "abstract": false, "superTypes": [ "SimpleExpression" ], "name": "Empty" },
+{ "_class": "Class", "abstract": false, "superTypes": [ "SimpleExpression" ], "features": [ 
+  { "_class": "Feature", "name": "value", "kind": "attribute", "lowerLimit": 1, "upperLimit": 1, "type": "String" }], "name": "LessThan" },
+{ "_class": "Class", "abstract": false, "superTypes": [ "SimpleExpression" ], "features": [ 
+  { "_class": "Feature", "name": "value", "kind": "attribute", "lowerLimit": 1, "upperLimit": 1, "type": "String" }], "name": "GreaterThan" },
+{ "_class": "Class", "abstract": false, "superTypes": [ "Expression" ], "features": [ 
+  { "_class": "Feature", "name": "expression", "kind": "containment", "lowerLimit": 1, "upperLimit": 1, "type": "Expression" }], "name": "Not" },
+{ "_class": "Class", "abstract": false, "superTypes": [ "Expression" ], "features": [ 
+  { "_class": "Feature", "name": "expression1", "kind": "containment", "lowerLimit": 1, "upperLimit": 1, "type": "Expression" },
+  { "_class": "Feature", "name": "expression2", "kind": "containment", "lowerLimit": 1, "upperLimit": 1, "type": "Expression" }], "name": "And" },
+{ "_class": "Class", "abstract": false, "superTypes": [ "Expression" ], "features": [ 
+  { "_class": "Feature", "name": "expression1", "kind": "containment", "lowerLimit": 1, "upperLimit": 1, "type": "Expression" },
+  { "_class": "Feature", "name": "expression2", "kind": "containment", "lowerLimit": 1, "upperLimit": 1, "type": "Expression" }], "name": "Or" },
+{ "_class": "Class", "abstract": false, "superTypes": [ "ContentElement" ], "features": [ 
+  { "_class": "Feature", "name": "text", "kind": "attribute", "lowerLimit": 1, "upperLimit": 1, "type": "String" }], "name": "Text" },
+{ "_class": "Class", "abstract": true, "superTypes": [ "ContentElement" ], "features": [ 
+  { "_class": "Feature", "name": "label", "kind": "attribute", "lowerLimit": 0, "upperLimit": 1, "type": "String" },
+  { "_class": "Feature", "name": "description", "kind": "attribute", "lowerLimit": 0, "upperLimit": 1, "type": "String" },
+  { "_class": "Feature", "name": "data", "kind": "reference", "lowerLimit": 1, "upperLimit": 1, "type": "Data" }], "name": "DataInput" },
+{ "_class": "Class", "abstract": false, "superTypes": [ "DataInput" ], "name": "TextInput" },
+{ "_class": "Class", "abstract": false, "superTypes": [ "DataInput" ], "name": "DropDownInput" },
+{ "_class": "Class", "abstract": false, "superTypes": [ "DataInput" ], "name": "RadioInput" },
+{ "_class": "Class", "abstract": false, "superTypes": [ "DataInput" ], "name": "CheckboxInput" },
+{ "_class": "Class", "abstract": false, "superTypes": [ "DataInput" ], "name": "DatePickerInput" },
+{ "_class": "Datatype", "name": "String" },
+{ "_class": "Datatype", "name": "Boolean" },
+{ "_class": "Enum", "literals": [ "String", "Integer", "Boolean", "Date" ], "name": "DataType" }]

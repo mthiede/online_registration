@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>RegistrationConfigs: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'scaffold' %>
+  <%= stylesheet_link_tag 'concrete/themes/white' %>
+  <%= stylesheet_link_tag 'concrete/themes/fold_button_plus_minus' %>
+  <%= stylesheet_link_tag 'styles' %>
+  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag "concrete/concrete" %>
+</head>
+<body>
+
+<p style="color: green"><%= notice %></p>
+
+<div id="templates1" style="display: none">	
+  <div class="ct_element ctc_Data">
+    <div>
+    <div class="headline">
+    <span class="ct_attribute ctn_name ct_identifier_attribute"><span class="ct_slot"></span></span>
+    <span class="ct_attribute ctn_type"><span class="ct_feature_name">type: </span><span class="ct_slot"></span></span>
+    <span class="ct_attribute ctn_optional ct_auto_hide"><span class="ct_feature_name">optional: </span><span class="ct_slot"></span></span>
+    <span class="ct_fold_button"></span>
+    </div>
+    <div class="ct_containment ctn_constraints ct_auto_hide"><div class="ct_slot"></div></div>
+    </div>
+  </div>
+  <div class="ct_element ctc_Page">
+    <div class="ct_containment ctn_guardCondition ct_auto_hide">
+      <div class="ct_slot"></div>
+    </div>
+    <div class="content">
+      <div class="headline">
+      <span class="ct_attribute ctn_name ct_identifier_attribute"><span class="ct_slot"></span></span>
+      <span class="ct_fold_button"></span>
+      </div>
+      <div class="ct_containment ctn_elements"><div class="ct_slot"></div></div>
+    </div>
+    <div class="ct_containment ctn_constraints ct_auto_hide">
+    <div>
+      <div class="ct_slot"></div>
+    </div>
+    </div>
+    <div class="ct_reference ctn_successors ct_auto_hide">
+      <div class="ct_slot"></div>
+    </div>
+  </div>
+  <div class="ct_element ctc_LessThan">
+    <span class="ct_reference ctn_data"><span class="ct_slot"></span></span>
+    <span class="ct_attribute ctn_value"><span class="ct_slot"></span></span>
+  </div>
+  <div class="ct_element ctc_GreaterThan">
+    <span class="ct_reference ctn_data"><span class="ct_slot"></span></span>
+    <span class="ct_attribute ctn_value"><span class="ct_slot"></span></span>
+  </div>
+  <div class="ct_element ctc_Equals">
+    <span class="ct_reference ctn_data"><span class="ct_slot"></span></span>
+    <span class="ct_attribute ctn_value"><span class="ct_slot"></span></span>
+  </div>
+  <div class="ct_element ctc_Empty">
+    <span class="ct_reference ctn_data"><span class="ct_slot"></span></span>
+  </div>
+  <div class="ct_element ctc_OneOf">
+    <span class="ct_reference ctn_data"><span class="ct_slot"></span></span>
+    <span class="ct_attribute ctn_values"><span class="ct_slot"></span></span>
+  </div>
+  <div class="ct_element ctc_And">
+    <span class="ct_containment ctn_expression1"><span class="ct_slot"></span></span>
+    <span class="ct_containment ctn_expression2"><span class="ct_slot"></span></span>
+  </div>
+  <div class="ct_element ctc_Or">
+    <span class="ct_containment ctn_expression1"><span class="ct_slot"></span></span>
+    <span class="ct_containment ctn_expression2"><span class="ct_slot"></span></span>
+  </div>
+  <div class="ct_element ctc_Not">
+    <span class="ct_containment ctn_expression"><span class="ct_slot"></span></span>
+  </div>
+  <div class="ct_element ctc_Constraint">
+    <div>
+      <span class="ct_containment ctn_assert ct_auto_hide"><span class="ct_slot"></span></span>
+      <span class="ct_attribute ctn_message ct_auto_hide"><span class="ct_slot"></span></span>
+    </div>
+  </div>
+  <div class="ct_element ctc_TextInput DataInput">
+    <div>
+      <span class="ct_attribute ctn_label"><span class="ct_slot"></span></span>
+      <span class="input_widgets"><%= text_field nil, nil, :disabled=>true %></span>
+      <span class="ct_attribute ctn_description ct_auto_hide"><span class="ct_slot"></span></span>
+      <span class="ct_reference ctn_data ct_auto_hide"><span class="ct_slot"></span></span>
+      <span class="ct_fold_button"></span>
+    </div>
+  </div>
+  <div class="ct_element ctc_DropDownInput DataInput">
+    <div>
+      <span class="ct_attribute ctn_label"><span class="ct_slot"></span></span>
+      <span class="input_widgets"><select style="width: 100%" disabled></select></span>
+      <span class="ct_attribute ctn_description ct_auto_hide"><span class="ct_slot"></span></span>
+      <span class="ct_reference ctn_data ct_auto_hide"><span class="ct_slot"></span></span>
+      <span class="ct_fold_button"></span>
+    </div>
+  </div>
+  <div class="ct_element ctc_RadioInput DataInput">
+    <div>
+      <span class="ct_attribute ctn_label"><span class="ct_slot"></span></span>
+      <span class="input_widgets"><input type="radio" checked disabled/> <input type="radio" disabled/> <input type="radio" disabled/></span>
+      <span class="ct_attribute ctn_description ct_auto_hide"><span class="ct_slot"></span></span>
+      <span class="ct_reference ctn_data ct_auto_hide"><span class="ct_slot"></span></span>
+      <span class="ct_fold_button"></span>
+    </div>
+  </div>
+  <div class="ct_element ctc_CheckboxInput DataInput">
+    <div>
+      <span class="ct_attribute ctn_label"><span class="ct_slot"></span></span>
+      <span class="input_widgets"><input type="checkbox" checked disabled/></span>
+      <span class="ct_attribute ctn_description ct_auto_hide"><span class="ct_slot"></span></span>
+      <span class="ct_reference ctn_data ct_auto_hide"><span class="ct_slot"></span></span>
+      <span class="ct_fold_button"></span>
+    </div>
+  </div>
+  <div class="ct_element ctc_DatePickerInput DataInput">
+    <div>
+      <span class="ct_attribute ctn_label"><span class="ct_slot"></span></span>
+      <span class="input_widgets"><%= date_select nil, nil, :disabled => true%></span>
+      <span class="ct_attribute ctn_description ct_auto_hide"><span class="ct_slot"></span></span>
+      <span class="ct_reference ctn_data ct_auto_hide"><span class="ct_slot"></span></span>
+      <span class="ct_fold_button"></span>
+    </div>
+  </div>
+  <div class="ct_element ctc_Text">
+    <span class="ct_attribute ctn_text"><span class="ct_slot"></span></span>
+  </div>
+</div>
+
+<div id="metamodel1" style="display: none">
+  <%= render :file => "../../lib/metamodel/generated/event_registration_metamodel.json" %>
+</div>
+
+<%= yield %>
+
+<p style="color: #ccc">Icons by <a href="http://fatcow.com/free-icons/" target="_blank" style="color: #ccc">fatcow.com</a>
+</body>
+</html>

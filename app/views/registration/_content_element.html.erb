@@ -1,0 +1,31 @@
+<% enum_literals = lambda { c = content_element.data.constraints.find{|c| c.assert && c.assert.respond_to?(:values)}; (c && c.assert.values) || []} %>
+<div class="row">
+<% case content_element
+
+  when EventRegistrationMetamodel::Content::Text %>
+    <p><%= content_element.text %></p>
+
+  <% when EventRegistrationMetamodel::Content::DataInput %>
+    <% data_name = content_element.data.name.to_sym %>
+    <%= label :record, data_name, content_element.label, :style => "display: inline-block; min-width: 150px;" %>
+    <% case content_element.class.name.split("::").last
+       when "TextInput" %>
+      <%= f.text_field data_name %>
+    <% when "DropDownInput" %>
+      <%= select :record, data_name, enum_literals.call %>
+    <% when "RadioInput" %>
+      <% enum_literals.call.each do |l| %>
+        <%= label :record, data_name, l, :value => l %><%= radio_button :record, data_name, l %>
+      <% end %>
+    <% when "CheckboxInput" %>
+      <%= check_box :record, data_name %> 
+    <% when "DatePickerInput" %>
+      <%= date_select :record, data_name, :start_year => 1900 %>
+    <% end %>
+    <% if content_element.description && content_element.description.strip.size > 0 %>
+      <span class="description"><%= content_element.description %></span>
+    <% end %>
+
+<% end %>
+</div>
+

@@ -1,0 +1,324 @@
+/*** General ***/
+
+body {
+  font-family: verdana, arial;
+} 
+
+.editor_border {
+	border: 1px solid grey;
+  padding: 3px;
+}
+
+/* editor */
+.ct_editor {
+	padding: 10px;
+  border: 0;
+  font-family: arial;
+}
+
+/* editor when focused */
+.ct_editor.ct_focus {
+  padding: 9px;
+	border: 1px dotted grey;
+}
+
+.ct_identifier_attribute {
+  font-size: 18px;
+}
+
+.ct_inline_editor > div {
+  z-index: 1000;
+}
+
+.headline {
+  padding: 5px;
+}
+
+.ct_containment {
+	padding-left: 0px;	
+}
+
+.ct_inline_editor input {
+	font-family: arial;
+}
+
+.ct_error {
+  border: 3px solid red;
+}
+
+.ct_cursor {
+  display: none;
+}
+
+.ct_focus .ct_cursor {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
+.ct_cursor_left.ct_cursor_top {
+  margin-left: -25px;
+  margin-top: -25px;
+  background: no-repeat url(../images/cursor_top_left.png);
+}
+.ct_cursor_right.ct_cursor_top {
+  margin-left: -7px;
+  margin-top: -25px;
+  background: no-repeat url(../images/cursor_top_right.png);
+}
+.ct_cursor_left.ct_cursor_bottom {
+  margin-left: -25px;
+  margin-top: -7px;
+  background: no-repeat url(../images/cursor_bottom_left.png);
+}
+.ct_cursor_right.ct_cursor_bottom {
+  margin-left: -7px;
+  margin-top: -7px;
+  background: no-repeat url(../images/cursor_bottom_right.png);
+}
+
+.ct_empty {
+	background-color: transparent;	
+}
+
+.ct_selected {
+	background-color: #ccf;
+}
+
+/*** Data ***/
+
+.ctc_Data > div {
+  padding-left: 42px;
+  min-height: 32px;
+  background: no-repeat url(../images/database_table_col.png);
+}
+
+.ctc_Data .ctn_constraints {
+  padding: 0;
+  display: inline-block;
+}
+
+/*** Input ***/
+
+.DataInput .ct_reference.ctn_data {
+  display: inline-block;
+  padding-top: 3px;
+  padding-left: 34px;
+  min-height: 24px;
+  background: 0px 1px no-repeat url(../images/data_ref_small.png);
+}
+
+.ct_attribute.ctn_description {
+  display: inline-block;
+  padding-top: 3px;
+  padding-left: 34px;
+  min-height: 24px;
+  background: 0px 1px no-repeat url(../images/information_small.png);
+}
+
+.ctn_label {
+  display: inline-block;
+  min-width: 150px;
+}
+
+.input_widgets {
+  display: inline-block;
+  margin: 5px;
+  min-width: 200px;
+}
+
+/*** Page ***/
+
+.ctc_Page {
+  display: inline-block;
+  margin: 20px;
+}
+
+.ctc_Page .content {
+  -moz-box-shadow: 0px 0px 20px #888;
+  padding: 20px;
+}
+
+.ctc_Page .ctn_constraints.ct_containment {
+  padding: 0px;
+}
+
+.ctc_Page .ctn_constraints > div {
+  position: relative;
+  display: inline-block;
+  left: 10px;
+  top: -5px;
+  -moz-border-radius: 15px;
+  background-color: #ff8;
+  padding: 10px;
+  -moz-box-shadow: 0px 0px 10px #888;
+}
+
+.ctc_Page .ctn_constraints > div > div {
+  padding-left: 42px;
+  min-height: 32px;
+  background: no-repeat url(../images/stop.png);
+}
+
+.ctc_Page .ctn_successors {
+  position: relative;
+  display: inline-block;
+  left: 20px;
+  top: -10px;
+  -moz-border-radius: 15px;
+  background-color: #ff8;
+  padding: 10px;
+  -moz-box-shadow: 0px 0px 10px #888;
+}
+
+.ctc_Page .ctn_successors > div {
+  padding-left: 42px;
+  min-height: 32px;
+  background: no-repeat url(../images/to_page.png);
+}
+
+.ctn_successors > .ct_slot > .ct_value {
+  display: block;
+}
+
+.ctc_Page > .ctn_guardCondition {
+  position: relative;
+  display: inline-block;
+  left: -10px;
+  top: 5px;
+  -moz-border-radius: 15px;
+  background-color: #ff8;
+  padding: 10px;
+  -moz-box-shadow: 0px 0px 10px #888;
+}
+
+.ctc_Page .ctn_guardCondition > div {
+  padding-left: 42px;
+  min-height: 32px;
+  background: no-repeat url(../images/page_exists.png);
+}
+
+/*** Constraints ***/
+
+.ctc_Constraint.ct_element {
+  display: block;
+  background-color: #afa;
+  padding: 10px;
+  margin: 5px;
+  -moz-border-radius: 10px;
+}
+
+.ctc_Constraint.ct_element.ct_selected {
+  background-color: #ccf;
+}
+
+.ctc_Constraint > div {
+  padding-left: 42px;
+  min-height: 32px;
+  background: no-repeat url(../images/accept.png);
+}
+
+.ctc_Constraint .ctn_message {
+  display: block;
+  padding: 5px;
+  padding-left: 34px;
+  min-height: 24px;
+  background: 0px 5px no-repeat url(../images/comment_delete_small.png);
+}
+
+.ctc_Constraint .ctn_condition {
+  padding: 0;
+}
+
+/*** Expressions ***/
+
+.ctc_LessThan.ct_element, 
+.ctc_GreaterThan.ct_element, 
+.ctc_Equals.ct_element, 
+.ctc_Empty.ct_element, 
+.ctc_OneOf.ct_element,
+.ctc_And.ct_element,
+.ctc_Or.ct_element,
+.ctc_Not.ct_element {
+  display: inline-block;
+  border: 1px solid grey;
+  background-color: #fff;
+  padding: 4px; 
+  margin: 0px;
+  -moz-border-radius: 10px;
+}
+
+.ctc_LessThan.ct_element.ct_selected, 
+.ctc_GreaterThan.ct_element.ct_selected, 
+.ctc_Equals.ct_element.ct_selected, 
+.ctc_Empty.ct_element.ct_selected, 
+.ctc_OneOf.ct_element.ct_selected,
+.ctc_And.ct_element.ct_selected,
+.ctc_Or.ct_element.ct_selected,
+.ctc_Not.ct_element.ct_selected {
+	background-color: #ccf;
+}
+
+.ctc_LessThan .ctn_value {
+  display: inline-block;
+  padding-left: 34px;
+  min-height: 24px;
+  background: left center no-repeat url(../images/condition_less_small.png);
+}
+
+.ctc_GreaterThan .ctn_value {
+  display: inline-block;
+  padding-left: 34px;
+  min-height: 24px;
+  background: left center no-repeat url(../images/condition_greater_small.png);
+}
+
+.ctc_Equals .ctn_value {
+  display: inline-block;
+  padding-left: 34px;
+  min-height: 24px;
+  background: left center no-repeat url(../images/condition_equals_small.png);
+}
+
+.ctc_Empty .ctn_data {
+  display: inline-block;
+  padding-left: 34px;
+  min-height: 24px;
+  background: left center no-repeat url(../images/condition_empty_small.png);
+}
+
+.ctc_OneOf .ctn_values {
+  display: inline-block;
+  padding-left: 34px;
+  min-height: 24px;
+  background: left center no-repeat url(../images/condition_within_small.png);
+}
+
+.ctc_OneOf .ct_value ~ .ct_value:before {
+  content:", ";
+}
+
+.ctc_And .ctn_expression2 {
+  display: inline-block;
+  padding-left: 34px;
+  min-height: 24px;
+  background: left center no-repeat url(../images/condition_and_small.png);
+  margin-left: 5px;
+}
+
+.ctc_Or .ctn_expression2 {
+  display: inline-block;
+  padding-left: 34px;
+  min-height: 24px;
+  background: left center no-repeat url(../images/condition_or_small.png);
+  margin-left: 5px;
+}
+
+.ctc_Not .ctn_expression {
+  display: inline-block;
+  padding-left: 34px;
+  min-height: 24px;
+  background: left center no-repeat url(../images/condition_not_small.png);
+}
+
+

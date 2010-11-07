@@ -1,0 +1,15 @@
+<h1>Showing Registration Config</h1>
+
+<p
+  <b>Name:</b>
+  <%=h @registration_config.name %>
+</p>
+
+<%= render :partial => "concrete_editor", :locals => {:readonly => true} %>
+<div id="config_data_json" style="display: none"><%= @registration_config.config %></div>
+<%= javascript_tag "setModel($('config_data_json').textContent);" %>
+
+
+<%= link_to 'Edit', edit_registration_config_path(@registration_config) %> |
+<%= link_to 'Try It!', :controller => :registration, :action => :register, :id => @registration_config.id %> |
+<%= link_to 'Back', registration_configs_path %>

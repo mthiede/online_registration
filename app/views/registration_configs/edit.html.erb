@@ -1,0 +1,21 @@
+<h1>Editing Registration Config</h1>
+
+<% form_for(@registration_config, :html => {:onsubmit => "$('registration_config_config').value = ed.getModel();"}) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+    <%= f.hidden_field :config %>
+  </p>
+  <%= render :partial => "concrete_editor", :locals => { :readonly => false} %>
+  <%= javascript_tag "setModel($('registration_config_config').value);" %>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+
+<%= link_to 'Show', @registration_config %> |
+<%= link_to 'Try It!', :controller => :registration, :action => :register, :id => @registration_config.id %> |
+<%= link_to 'Back', registration_configs_path %>

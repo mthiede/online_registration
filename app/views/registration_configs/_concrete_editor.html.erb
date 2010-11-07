@@ -1,0 +1,38 @@
+<div class="editor_border">
+<div class="ct_editor" id="editor1">
+</div>
+</div>
+
+<br/>
+<textarea id="clipboard1" style="background-color: white; color: black; border: 1px solid grey; display: none" cols="80" rows="10" wrap="off"></textarea>
+
+<script type="text/javascript" language="javascript" charset="utf-8">
+  // <![CDATA[
+    var tp = new Concrete.TemplateProvider($("templates1"), {identifierAttribute: "name"});
+    var mp = new Concrete.MetamodelProvider($("metamodel1").textContent.evalJSON());
+    var ip = new Concrete.QualifiedNameBasedIdentifierProvider({nameAttribute: "name"});
+    var cb = new Concrete.Clipboard($("clipboard1"));
+    var ed = new Concrete.Editor($("editor1"), tp, mp, ip, {clipboard: cb,
+      rootClasses: mp.metaclasses.select(function(c) {return ["Data", "Page"].include(c.name);}),
+      readOnlyMode: <%= readonly ? "true" : "false" %> });
+      
+    Event.observe(window, 'click', function(event) {
+      ed.handleEvent(event);
+    });
+    Event.observe(window, 'keydown', function(event) {
+      ed.handleEvent(event);
+    });
+    Event.observe(window, 'mousemove', function(event) {
+      ed.handleEvent(event);
+    });
+
+    function setModel(json) {
+      ed.setModel(json);
+      window.setTimeout(function() {
+        ed.modelRoot.select(".ct_attribute.ct_error, .ct_reference.ct_error, .ct_containment.ct_error").each(function(f) { 
+          ed.showHiddenFeature(f);
+        });}, 100);
+    };
+  // ]]>
+</script>
+
